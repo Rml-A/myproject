@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Продукт {% endblock %}
+
+
+{% block content %}
+<div class="container fs-4 fw-bolder">
+    <div class="row">
+        <div class="col">
+          <img src="/media/{{product.image}}" alt="" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <p class="fs-1">{{ product.name }}</p>
+            <hr />
+            <p class="pt-5">Цена: {{ product.price }}</p>
+            <p>В наличии: {{ product.count }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-start">
+            <p>{{ product.description }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

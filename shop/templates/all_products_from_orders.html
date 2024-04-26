@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ client.name }}
+{% endblock title %}
+
+{% block content %}
+<h2> Все заказанные продукты клиента: {{ client.name }} за последние {{ days }} дней</h2>
+{% for product in products %}
+<ul>
+    <li>
+        {{ product }}
+    </li>
+</ul>
+
+{% endfor %}
+{% endblock %}

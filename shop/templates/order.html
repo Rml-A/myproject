@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ client.name }}
+{% endblock title %}
+
+{% block content %}
+    Клиент : {{ client.name }} <br>
+    Телефон: {{client.phone_number}} <br><br>
+    {% for order in orders %}
+    номер заказа: {{order.pk}} <br>
+        {% for pk, product in products.items %}
+            {% if pk == order.pk %}
+                    <ul>{% for item in product %}
+                       <li>{{item}} </li>
+                    {% endfor %} </ul>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    
+{% endblock content %}
